@@ -1,0 +1,57 @@
+<!-- ========================================
+     Component: CTA (Call to Action)
+     A/B test variants: urgency vs. value
+     ======================================== -->
+
+<!-- Variant A: Urgency-based -->
+<section id="cta" data-ab-experiment="cta-style" data-ab-variant="urgency" data-ab-weight="1"
+         class="section-padding text-center" style="background: var(--color-primary); color: var(--color-text-inverse);">
+  <div class="container mx-auto max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">⏰ Limited Time Offer</h2>
+    <p class="text-xl mb-2 opacity-90">Get 40% off + Free Shipping — Ends Soon!</p>
+    <div x-data="{ hours: 23, mins: 59, secs: 59 }"
+         x-init="setInterval(() => { secs--; if(secs < 0){secs=59;mins--;} if(mins < 0){mins=59;hours--;} if(hours < 0){hours=23;} }, 1000)"
+         class="flex justify-center gap-4 my-6">
+      <div class="bg-white/20 backdrop-blur rounded-xl px-4 py-3">
+        <span class="text-2xl font-bold" x-text="String(hours).padStart(2,'0')">23</span>
+        <p class="text-xs opacity-75 mt-1">Hours</p>
+      </div>
+      <div class="bg-white/20 backdrop-blur rounded-xl px-4 py-3">
+        <span class="text-2xl font-bold" x-text="String(mins).padStart(2,'0')">59</span>
+        <p class="text-xs opacity-75 mt-1">Minutes</p>
+      </div>
+      <div class="bg-white/20 backdrop-blur rounded-xl px-4 py-3">
+        <span class="text-2xl font-bold" x-text="String(secs).padStart(2,'0')">59</span>
+        <p class="text-xs opacity-75 mt-1">Seconds</p>
+      </div>
+    </div>
+    <a href="#checkout" class="inline-block bg-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-gray-100 transition-all hover:shadow-lg" style="color: var(--color-primary);" data-ab-track>
+      🛒 Claim Your Discount Now
+    </a>
+    <p class="text-sm mt-4 opacity-75">✅ 30-day money back guarantee · Free shipping · Secure checkout</p>
+  </div>
+</section>
+
+<!-- Variant B: Value-based -->
+<section data-ab-experiment="cta-style" data-ab-variant="value" data-ab-weight="1"
+         class="section-padding text-center" style="background: var(--color-primary); color: var(--color-text-inverse); display:none;">
+  <div class="container mx-auto max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Ready to Transform Your Store?</h2>
+    <p class="text-xl mb-6 opacity-90">
+      Join 2,847+ store owners who increased their conversion rate by an average of 47%.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#checkout" class="inline-block bg-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-gray-100 transition-all hover:shadow-lg" style="color: var(--color-primary);" data-ab-track>
+        🚀 Get Started Today
+      </a>
+      <a href="#pricing" class="inline-block border-2 border-white/50 font-bold px-10 py-4 rounded-xl text-lg hover:bg-white/10 transition-all text-white">
+        View Pricing →
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 mt-8 text-sm opacity-75">
+      <span>✅ No credit card required</span>
+      <span>✅ 30-day money back guarantee</span>
+      <span>✅ Cancel anytime</span>
+    </div>
+  </div>
+</section>

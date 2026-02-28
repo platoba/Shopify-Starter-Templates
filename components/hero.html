@@ -1,0 +1,76 @@
+<!-- ========================================
+     Component: Hero Section
+     Variants: centered, split-image, video-bg
+     ======================================== -->
+
+<!-- Variant A: Split with Image -->
+<section data-ab-experiment="hero-style" data-ab-variant="split" data-ab-weight="1"
+         class="section-padding overflow-hidden">
+  <div class="container mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="badge badge-primary mb-4">✨ New Release</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" style="color: var(--color-text);">
+          Build Your Dream
+          <span style="color: var(--color-primary);">Online Store</span>
+        </h1>
+        <p class="text-lg md:text-xl mb-8" style="color: var(--color-text-muted);">
+          Professional Shopify templates designed to convert visitors into customers.
+          Launch faster, sell more, grow bigger.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#cta" class="btn-primary text-center" data-ab-track>
+            🛒 Shop Now — Free Shipping
+          </a>
+          <a href="#features" class="btn-secondary text-center">
+            Learn More →
+          </a>
+        </div>
+        <div class="flex items-center gap-6 mt-8" style="color: var(--color-text-muted);">
+          <div class="flex items-center gap-2">
+            <span class="text-yellow-400">★★★★★</span>
+            <span class="text-sm font-medium">4.9/5 (2,847 reviews)</span>
+          </div>
+          <div class="text-sm">✅ 30-day guarantee</div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <img src="https://placehold.co/600x600/e2e8f0/475569?text=Product+Image"
+             alt="Product hero image"
+             class="rounded-2xl w-full"
+             style="box-shadow: var(--shadow-xl);"
+             loading="eager"
+             width="600" height="600">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Variant B: Centered -->
+<section data-ab-experiment="hero-style" data-ab-variant="centered" data-ab-weight="1"
+         class="section-padding text-center overflow-hidden" style="display:none;">
+  <div class="container mx-auto max-w-4xl">
+    <span class="badge badge-primary mb-4">✨ New Release</span>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" style="color: var(--color-text);">
+      The Future of
+      <span style="color: var(--color-primary);">E-Commerce</span>
+      Starts Here
+    </h1>
+    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style="color: var(--color-text-muted);">
+      Professional Shopify templates designed to convert visitors into customers.
+      Launch faster, sell more, grow bigger.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#cta" class="btn-primary" data-ab-track>
+        🛒 Shop Now — Free Shipping
+      </a>
+      <a href="#features" class="btn-secondary">Learn More →</a>
+    </div>
+    <img src="https://placehold.co/1000x500/e2e8f0/475569?text=Hero+Banner"
+         alt="Hero banner"
+         class="rounded-2xl mt-12 w-full"
+         style="box-shadow: var(--shadow-xl);"
+         loading="eager"
+         width="1000" height="500">
+  </div>
+</section>

@@ -1,0 +1,88 @@
+<!-- ========================================
+     Component: Pricing Table
+     3-tier with highlighted recommended plan
+     ======================================== -->
+<section id="pricing" class="section-padding" style="background: var(--color-bg-alt);">
+  <div class="container mx-auto">
+    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <p class="section-subtitle">Choose the plan that fits your business. No hidden fees, cancel anytime.</p>
+
+    <!-- Billing Toggle -->
+    <div x-data="{ annual: true }" class="space-y-8">
+      <div class="flex items-center justify-center gap-3">
+        <span class="text-sm font-medium" :style="!annual ? 'color: var(--color-text)' : 'color: var(--color-text-muted)'">Monthly</span>
+        <button @click="annual = !annual"
+                class="relative w-14 h-7 rounded-full transition-colors"
+                :style="annual ? 'background: var(--color-primary)' : 'background: var(--color-border-dark)'"
+                role="switch" :aria-checked="annual">
+          <span class="absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform"
+                :class="annual ? 'translate-x-7' : 'translate-x-0'"></span>
+        </button>
+        <span class="text-sm font-medium" :style="annual ? 'color: var(--color-text)' : 'color: var(--color-text-muted)'">Annual</span>
+        <span class="badge badge-success" x-show="annual">Save 20%</span>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Starter -->
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">Starter</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-muted);">Perfect for new stores</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold" x-text="annual ? '$19' : '$24'"></span>
+            <span style="color: var(--color-text-muted);">/month</span>
+          </div>
+          <ul class="space-y-3 text-sm mb-8 text-left">
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> 1 Landing Page Template</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Basic Theme Customization</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Mobile Responsive</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> SEO Basics</li>
+            <li class="flex items-center gap-2" style="color: var(--color-text-light);">✗ A/B Testing</li>
+            <li class="flex items-center gap-2" style="color: var(--color-text-light);">✗ Priority Support</li>
+          </ul>
+          <a href="#" class="btn-secondary w-full text-center block !text-base">Get Started</a>
+        </div>
+
+        <!-- Pro (Recommended) -->
+        <div class="card text-center relative" style="border: 2px solid var(--color-primary); transform: scale(1.05);">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="badge badge-primary">Most Popular</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2 mt-2">Professional</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-muted);">For growing businesses</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold" style="color: var(--color-primary);" x-text="annual ? '$49' : '$59'"></span>
+            <span style="color: var(--color-text-muted);">/month</span>
+          </div>
+          <ul class="space-y-3 text-sm mb-8 text-left">
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> 5 Landing Page Templates</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Full Theme System (6 themes)</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Component Library</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Advanced SEO + Schema</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> A/B Testing Framework</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Priority Support</li>
+          </ul>
+          <a href="#" class="btn-primary w-full text-center block !text-base">Get Started</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">Enterprise</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-muted);">For established brands</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold" x-text="annual ? '$99' : '$119'"></span>
+            <span style="color: var(--color-text-muted);">/month</span>
+          </div>
+          <ul class="space-y-3 text-sm mb-8 text-left">
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Everything in Professional</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Custom Theme Development</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> White Label Options</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Advanced Analytics</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> Dedicated Account Manager</li>
+            <li class="flex items-center gap-2"><span style="color: var(--color-success);">✓</span> SLA Guarantee</li>
+          </ul>
+          <a href="#" class="btn-secondary w-full text-center block !text-base">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

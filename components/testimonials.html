@@ -1,0 +1,73 @@
+<!-- ========================================
+     Component: Testimonials / Reviews
+     Carousel with Alpine.js
+     ======================================== -->
+<section id="testimonials" class="section-padding">
+  <div class="container mx-auto">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-subtitle">Join thousands of happy store owners who trust our templates.</p>
+
+    <div x-data="{ active: 0, testimonials: [
+      { name: 'Sarah Mitchell', role: 'Founder, GlowSkin Co.', text: 'These templates completely transformed my Shopify store. My conversion rate went up 47% in the first month. The A/B testing features are a game changer!', rating: 5, avatar: 'SM' },
+      { name: 'James Chen', role: 'CEO, TechGear Pro', text: 'I launched my store in under 2 hours. The responsive design looks incredible on mobile, which is where 70% of my traffic comes from. Absolutely worth it.', rating: 5, avatar: 'JC' },
+      { name: 'Emily Rodriguez', role: 'Owner, Artisan Jewelry', text: 'The theme system is brilliant. I matched my brand colors perfectly with a single CSS variable change. Professional quality without the agency price tag.', rating: 5, avatar: 'ER' },
+      { name: 'David Kim', role: 'Marketing Director, FitLife', text: 'We tested 3 different CTA variants using the built-in A/B testing. Found the winner that doubled our click-through rate. Incredible ROI.', rating: 5, avatar: 'DK' },
+      { name: 'Lisa Thompson', role: 'Founder, PetPal Store', text: 'The SEO optimization is top-notch. We ranked on page 1 for our main keywords within weeks. The Schema.org markup makes a real difference.', rating: 5, avatar: 'LT' }
+    ] }" class="relative">
+
+      <!-- Cards Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <template x-for="(t, i) in testimonials.slice(0, 3)" :key="i">
+          <div class="card">
+            <div class="flex items-center gap-1 mb-3">
+              <template x-for="s in t.rating"><span class="text-yellow-400">★</span></template>
+            </div>
+            <p class="mb-4 leading-relaxed" style="color: var(--color-text);" x-text="'\"' + t.text + '\"'"></p>
+            <div class="flex items-center gap-3 pt-3" style="border-top: 1px solid var(--color-border);">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                   style="background: var(--color-primary-light); color: var(--color-primary);"
+                   x-text="t.avatar"></div>
+              <div>
+                <p class="font-semibold text-sm" x-text="t.name"></p>
+                <p class="text-xs" style="color: var(--color-text-muted);" x-text="t.role"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="flex justify-center gap-2 mt-8">
+        <template x-for="(_, i) in [0, 1]" :key="i">
+          <button @click="active = i"
+                  class="w-3 h-3 rounded-full transition-all"
+                  :style="active === i
+                    ? 'background: var(--color-primary); width: 2rem;'
+                    : 'background: var(--color-border);'"
+                  :aria-label="'Page ' + (i+1)">
+          </button>
+        </template>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8" style="border-top: 1px solid var(--color-border);">
+        <div class="text-center">
+          <div class="text-3xl font-extrabold" style="color: var(--color-primary);">4.9★</div>
+          <div class="text-sm mt-1" style="color: var(--color-text-muted);">Average Rating</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-extrabold" style="color: var(--color-primary);">2,847</div>
+          <div class="text-sm mt-1" style="color: var(--color-text-muted);">Happy Customers</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-extrabold" style="color: var(--color-primary);">47%</div>
+          <div class="text-sm mt-1" style="color: var(--color-text-muted);">Avg. Conversion Lift</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-extrabold" style="color: var(--color-primary);">24/7</div>
+          <div class="text-sm mt-1" style="color: var(--color-text-muted);">Support Available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
