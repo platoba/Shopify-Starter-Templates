@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  # Preview minimal-store
+  minimal-store:
+    build: .
+    ports:
+      - "8081:8080"
+    command: ["python", "-m", "http.server", "8080", "--directory", "minimal-store"]
+    volumes:
+      - ./minimal-store:/app/minimal-store:ro
+
+  # Preview dropship-starter
+  dropship-starter:
+    build: .
+    ports:
+      - "8082:8080"
+    command: ["python", "-m", "http.server", "8080", "--directory", "dropship-starter"]
+    volumes:
+      - ./dropship-starter:/app/dropship-starter:ro
+
+  # Preview landing-product
+  landing-product:
+    build: .
+    ports:
+      - "8083:8080"
+    command: ["python", "-m", "http.server", "8080", "--directory", "landing-product"]
+    volumes:
+      - ./landing-product:/app/landing-product:ro
+
+  # Run tests
+  test:
+    build: .
+    command: ["python", "-m", "pytest", "tests/", "-v", "--tb=short"]
+    profiles:
+      - test

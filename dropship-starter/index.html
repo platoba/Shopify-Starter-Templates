@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropship Pro — Start Your Store Today</title>
+    <meta name="description" content="Launch your dropshipping business in minutes. Premium products, automated fulfillment, global shipping.">
+    <meta property="og:title" content="Dropship Pro — Your Dropshipping Store">
+    <meta property="og:description" content="Premium products, automated fulfillment, global shipping.">
+    <link rel="canonical" href="https://yourstore.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50:'#fef3c7', 100:'#fde68a', 500:'#f59e0b', 600:'#d97706', 700:'#b45309' },
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+<!-- Top Bar -->
+<div class="bg-dark text-white text-center py-2 text-sm">
+    🔥 Flash Sale — Up to 70% OFF — <span id="countdown" class="font-bold text-primary-500">23:59:59</span>
+</div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 bg-white shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="text-2xl font-black">DROP<span class="text-primary-500">SHIP</span></a>
+        <div class="hidden md:flex items-center gap-6">
+            <a href="#trending" class="text-gray-600 hover:text-gray-900 font-medium transition">Trending</a>
+            <a href="#categories" class="text-gray-600 hover:text-gray-900 font-medium transition">Categories</a>
+            <a href="#deals" class="text-gray-600 hover:text-gray-900 font-medium transition">Daily Deals</a>
+            <a href="#reviews" class="text-gray-600 hover:text-gray-900 font-medium transition">Reviews</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="relative hidden md:block">
+                <input type="text" placeholder="Search products..." class="pl-10 pr-4 py-2 border rounded-full text-sm focus:ring-2 focus:ring-primary-500 outline-none w-48">
+                <svg class="w-4 h-4 absolute left-3 top-2.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <button class="relative p-2" aria-label="Cart">
+                🛒 <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center" id="cart-badge">0</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="bg-gradient-to-r from-dark to-gray-800 text-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-block bg-primary-500 text-dark text-sm font-bold px-3 py-1 rounded-full mb-4">🔥 Hot Drop</div>
+            <h1 class="text-4xl md:text-5xl font-black leading-tight mb-6">Premium Products.<br>Insane Prices.</h1>
+            <p class="text-gray-300 text-lg mb-8">Get trending products delivered worldwide. No inventory, no hassle. Start shopping today and save up to 70%.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#trending" class="bg-primary-500 text-dark px-8 py-4 rounded-xl font-bold hover:bg-primary-600 transition text-lg">🛍️ Shop Now</a>
+                <a href="#deals" class="border-2 border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition text-lg">Today's Deals</a>
+            </div>
+            <div class="flex items-center gap-6 mt-8 text-sm text-gray-400">
+                <span>✅ Free Shipping</span>
+                <span>✅ Secure Payment</span>
+                <span>✅ 30-Day Returns</span>
+            </div>
+        </div>
+        <div class="relative">
+            <img src="https://via.placeholder.com/600x500/1e293b/f59e0b?text=Hot+Product" alt="Featured Product" class="rounded-2xl shadow-2xl w-full">
+            <div class="absolute -bottom-4 -left-4 bg-red-500 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-lg animate-bounce">-70% OFF</div>
+        </div>
+    </div>
+</section>
+
+<!-- Trending Products -->
+<section id="trending" class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold">🔥 Trending Now</h2>
+        <div class="flex gap-2">
+            <button class="px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium">All</button>
+            <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200">Electronics</button>
+            <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200">Fashion</button>
+            <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200">Home</button>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5" id="trending-grid">
+        <!-- Product 1 -->
+        <div class="group bg-white rounded-xl border hover:shadow-lg transition">
+            <div class="relative overflow-hidden rounded-t-xl aspect-square bg-gray-50">
+                <img src="https://via.placeholder.com/400x400/fef3c7/92400e?text=Wireless+Earbuds" alt="Wireless Earbuds" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded font-bold">-65%</span>
+                <span class="absolute top-2 right-2 bg-yellow-400 text-dark text-xs px-2 py-0.5 rounded font-bold">⭐ 4.8</span>
+                <button class="absolute bottom-2 right-2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition" aria-label="Add to wishlist">❤️</button>
+            </div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm line-clamp-2">Pro Wireless Earbuds ANC Bluetooth 5.3</h3>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="text-lg font-bold text-red-600">$12.99</span>
+                    <span class="text-gray-400 line-through text-sm">$36.99</span>
+                </div>
+                <div class="flex items-center justify-between mt-2">
+                    <span class="text-xs text-gray-500">🔥 1.2k sold</span>
+                    <button class="bg-primary-500 text-dark text-xs px-3 py-1.5 rounded-lg font-bold hover:bg-primary-600 transition">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="group bg-white rounded-xl border hover:shadow-lg transition">
+            <div class="relative overflow-hidden rounded-t-xl aspect-square bg-gray-50">
+                <img src="https://via.placeholder.com/400x400/fef3c7/92400e?text=Smart+Watch" alt="Smart Watch" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded font-bold">-50%</span>
+                <span class="absolute top-2 right-2 bg-yellow-400 text-dark text-xs px-2 py-0.5 rounded font-bold">⭐ 4.6</span>
+            </div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm line-clamp-2">Smart Watch Ultra Fitness Tracker AMOLED</h3>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="text-lg font-bold text-red-600">$19.99</span>
+                    <span class="text-gray-400 line-through text-sm">$39.99</span>
+                </div>
+                <div class="flex items-center justify-between mt-2">
+                    <span class="text-xs text-gray-500">🔥 890 sold</span>
+                    <button class="bg-primary-500 text-dark text-xs px-3 py-1.5 rounded-lg font-bold hover:bg-primary-600 transition">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="group bg-white rounded-xl border hover:shadow-lg transition">
+            <div class="relative overflow-hidden rounded-t-xl aspect-square bg-gray-50">
+                <img src="https://via.placeholder.com/400x400/fef3c7/92400e?text=LED+Strip" alt="LED Strip Lights" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                <span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded font-bold">-70%</span>
+                <span class="absolute top-2 right-2 bg-yellow-400 text-dark text-xs px-2 py-0.5 rounded font-bold">⭐ 4.9</span>
+            </div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm line-clamp-2">RGB LED Strip Lights 20m WiFi Smart</h3>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="text-lg font-bold text-red-600">$8.99</span>
+                    <span class="text-gray-400 line-through text-sm">$29.99</span>
+                </div>
+                <div class="flex items-center justify-between mt-2">
+                    <span class="text-xs text-gray-500">🔥 3.5k sold</span>
+                    <button class="bg-primary-500 text-dark text-xs px-3 py-1.5 rounded-lg font-bold hover:bg-primary-600 transition">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="group bg-white rounded-xl border hover:shadow-lg transition">
+            <div class="relative overflow-hidden rounded-t-xl aspect-square bg-gray-50">
+                <img src="https://via.placeholder.com/400x400/fef3c7/92400e?text=Phone+Case" alt="Phone Case" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy">
+                <span class="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded font-bold">New</span>
+                <span class="absolute top-2 right-2 bg-yellow-400 text-dark text-xs px-2 py-0.5 rounded font-bold">⭐ 4.7</span>
+            </div>
+            <div class="p-3">
+                <h3 class="font-medium text-sm line-clamp-2">MagSafe Clear Case iPhone 16 Pro Max</h3>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="text-lg font-bold text-red-600">$4.99</span>
+                    <span class="text-gray-400 line-through text-sm">$14.99</span>
+                </div>
+                <div class="flex items-center justify-between mt-2">
+                    <span class="text-xs text-gray-500">🔥 5.1k sold</span>
+                    <button class="bg-primary-500 text-dark text-xs px-3 py-1.5 rounded-lg font-bold hover:bg-primary-600 transition">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories -->
+<section id="categories" class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center mb-10">📦 Shop by Category</h2>
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <a href="#" class="bg-white p-6 rounded-xl text-center hover:shadow-md transition group">
+                <div class="text-4xl mb-2 group-hover:scale-110 transition">📱</div>
+                <span class="text-sm font-medium">Electronics</span>
+            </a>
+            <a href="#" class="bg-white p-6 rounded-xl text-center hover:shadow-md transition group">
+                <div class="text-4xl mb-2 group-hover:scale-110 transition">👗</div>
+                <span class="text-sm font-medium">Fashion</span>
+            </a>
+            <a href="#" class="bg-white p-6 rounded-xl text-center hover:shadow-md transition group">
+                <div class="text-4xl mb-2 group-hover:scale-110 transition">🏠</div>
+                <span class="text-sm font-medium">Home</span>
+            </a>
+            <a href="#" class="bg-white p-6 rounded-xl text-center hover:shadow-md transition group">
+                <div class="text-4xl mb-2 group-hover:scale-110 transition">🏋️</div>
+                <span class="text-sm font-medium">Sports</span>
+            </a>
+            <a href="#" class="bg-white p-6 rounded-xl text-center hover:shadow-md transition group">
+                <div class="text-4xl mb-2 group-hover:scale-110 transition">🧸</div>
+                <span class="text-sm font-medium">Toys</span>
+            </a>
+            <a href="#" class="bg-white p-6 rounded-xl text-center hover:shadow-md transition group">
+                <div class="text-4xl mb-2 group-hover:scale-110 transition">💄</div>
+                <span class="text-sm font-medium">Beauty</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Daily Deals -->
+<section id="deals" class="max-w-7xl mx-auto px-4 py-16">
+    <div class="bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-8 md:p-12 text-white">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="inline-block bg-white/20 px-3 py-1 rounded-full text-sm font-bold mb-4">⏰ LIMITED TIME</span>
+                <h2 class="text-3xl md:text-4xl font-black mb-4">Deal of the Day</h2>
+                <p class="text-white/80 mb-6">Grab this amazing deal before it's gone. Only available for the next 24 hours!</p>
+                <div class="flex gap-4 mb-6">
+                    <div class="bg-white/20 backdrop-blur px-4 py-3 rounded-xl text-center min-w-[60px]">
+                        <div class="text-2xl font-black" id="hours">23</div>
+                        <div class="text-xs">Hours</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur px-4 py-3 rounded-xl text-center min-w-[60px]">
+                        <div class="text-2xl font-black" id="mins">59</div>
+                        <div class="text-xs">Mins</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur px-4 py-3 rounded-xl text-center min-w-[60px]">
+                        <div class="text-2xl font-black" id="secs">59</div>
+                        <div class="text-xs">Secs</div>
+                    </div>
+                </div>
+                <a href="#" class="inline-block bg-white text-red-600 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition">Grab Deal — $9.99</a>
+            </div>
+            <div class="text-center">
+                <img src="https://via.placeholder.com/400x300/ffffff/ef4444?text=Deal+Product" alt="Deal of the day" class="rounded-xl shadow-lg mx-auto">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center mb-10">⭐ What Our Customers Say</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center gap-1 mb-3">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-600 mb-4">"Amazing quality for the price! Arrived in 10 days and exceeded my expectations. Will definitely order again."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">S</div>
+                    <div>
+                        <div class="font-medium text-sm">Sarah M.</div>
+                        <div class="text-xs text-gray-400">Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center gap-1 mb-3">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-600 mb-4">"Best dropshipping store I've found. Prices are unbeatable and shipping was faster than expected. Love it!"</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-600">J</div>
+                    <div>
+                        <div class="font-medium text-sm">James K.</div>
+                        <div class="text-xs text-gray-400">Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center gap-1 mb-3">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-600 mb-4">"Ordered the wireless earbuds and they're incredible! Sound quality rivals premium brands at a fraction of the cost."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center font-bold text-purple-600">L</div>
+                    <div>
+                        <div class="font-medium text-sm">Lisa R.</div>
+                        <div class="text-xs text-gray-400">Verified Purchase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+            <div class="text-white text-xl font-black mb-4">DROP<span class="text-primary-500">SHIP</span></div>
+            <p class="text-sm">Premium products at unbeatable prices. Fast global shipping.</p>
+            <div class="flex gap-3 mt-4">
+                <a href="#" class="hover:text-white transition">📷</a>
+                <a href="#" class="hover:text-white transition">🐦</a>
+                <a href="#" class="hover:text-white transition">🎵</a>
+            </div>
+        </div>
+        <div>
+            <h3 class="text-white font-semibold mb-3">Shop</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white transition">All Products</a></li>
+                <li><a href="#" class="hover:text-white transition">Trending</a></li>
+                <li><a href="#" class="hover:text-white transition">New Arrivals</a></li>
+                <li><a href="#" class="hover:text-white transition">Flash Sales</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-semibold mb-3">Support</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+                <li><a href="#" class="hover:text-white transition">Track Order</a></li>
+                <li><a href="#" class="hover:text-white transition">Returns</a></li>
+                <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-semibold mb-3">Secure Payment</h3>
+            <div class="flex flex-wrap gap-2 text-2xl">
+                <span title="Visa">💳</span>
+                <span title="Mastercard">🏧</span>
+                <span title="PayPal">🅿️</span>
+                <span title="Apple Pay">🍎</span>
+            </div>
+        </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500">
+        © 2026 DropShip Pro. All rights reserved. | <a href="#" class="hover:text-gray-300">Privacy</a> | <a href="#" class="hover:text-gray-300">Terms</a>
+    </div>
+</footer>
+
+<script>
+// Countdown timer
+function startCountdown() {
+    let total = 86399;
+    const el = document.getElementById('countdown');
+    const h = document.getElementById('hours');
+    const m = document.getElementById('mins');
+    const s = document.getElementById('secs');
+    setInterval(() => {
+        total = Math.max(0, total - 1);
+        const hrs = Math.floor(total / 3600);
+        const mins = Math.floor((total % 3600) / 60);
+        const secs = total % 60;
+        if (el) el.textContent = `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+        if (h) h.textContent = String(hrs).padStart(2,'0');
+        if (m) m.textContent = String(mins).padStart(2,'0');
+        if (s) s.textContent = String(secs).padStart(2,'0');
+    }, 1000);
+}
+startCountdown();
+
+// Cart
+let cartCount = 0;
+document.querySelectorAll('button').forEach(btn => {
+    if (btn.textContent.includes('Add to Cart')) {
+        btn.addEventListener('click', () => {
+            cartCount++;
+            document.getElementById('cart-badge').textContent = cartCount;
+        });
+    }
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+
+</body>
+</html>

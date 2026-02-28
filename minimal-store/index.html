@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Store — Your Brand</title>
+    <meta name="description" content="Clean, fast e-commerce store. Free shipping worldwide.">
+    <meta property="og:title" content="Minimal Store — Your Brand">
+    <meta property="og:description" content="Clean, fast e-commerce store.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://yourstore.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50:'#f0f9ff', 100:'#e0f2fe', 500:'#0ea5e9', 600:'#0284c7', 700:'#0369a1' },
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Shopify Buy Button SDK -->
+    <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+<!-- Announcement Bar -->
+<div class="bg-brand-600 text-white text-center py-2 text-sm font-medium">
+    🚚 Free Shipping on Orders Over $50 — <a href="#shop" class="underline">Shop Now</a>
+</div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 bg-white/95 backdrop-blur-sm border-b z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold tracking-tight">BRAND</a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#shop" class="text-gray-600 hover:text-gray-900 transition">Shop</a>
+            <a href="#collections" class="text-gray-600 hover:text-gray-900 transition">Collections</a>
+            <a href="#about" class="text-gray-600 hover:text-gray-900 transition">About</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="search-btn" aria-label="Search" class="p-2 hover:bg-gray-100 rounded-full transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </button>
+            <button id="cart-btn" aria-label="Cart" class="relative p-2 hover:bg-gray-100 rounded-full transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+            </button>
+            <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Banner -->
+<section class="relative bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="inline-block bg-brand-100 text-brand-700 text-sm font-semibold px-3 py-1 rounded-full mb-4">New Season</span>
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">Elevate Your Everyday</h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-lg">Discover our curated collection of premium essentials designed for modern living.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#shop" class="bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition">Shop Collection</a>
+                <a href="#about" class="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition">Our Story</a>
+            </div>
+        </div>
+        <div class="relative">
+            <img src="https://via.placeholder.com/600x600/f0f9ff/0ea5e9?text=Hero+Image" alt="Featured collection" class="rounded-2xl shadow-2xl w-full" loading="eager">
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section id="shop" class="max-w-7xl mx-auto px-4 py-20">
+    <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl font-bold">Featured Products</h2>
+        <a href="#collections" class="text-brand-600 hover:text-brand-700 font-medium flex items-center gap-1">
+            View All <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6" id="product-grid">
+        <!-- Product Card 1 -->
+        <div class="group">
+            <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-square mb-4">
+                <img src="https://via.placeholder.com/400x400/f8fafc/64748b?text=Product+1" alt="Product 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                <button class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur text-gray-900 py-2 rounded-lg font-medium opacity-0 group-hover:opacity-100 transition translate-y-2 group-hover:translate-y-0">Quick Add</button>
+                <span class="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded">-20%</span>
+            </div>
+            <h3 class="font-medium text-gray-900">Essential Tee</h3>
+            <div class="flex items-center gap-2 mt-1">
+                <span class="font-semibold">$24.00</span>
+                <span class="text-gray-400 line-through text-sm">$30.00</span>
+            </div>
+            <div class="flex gap-1 mt-2">
+                <span class="w-4 h-4 rounded-full bg-black border-2 border-gray-300 cursor-pointer" title="Black"></span>
+                <span class="w-4 h-4 rounded-full bg-white border-2 border-gray-300 cursor-pointer" title="White"></span>
+                <span class="w-4 h-4 rounded-full bg-blue-600 border-2 border-gray-300 cursor-pointer" title="Blue"></span>
+            </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="group">
+            <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-square mb-4">
+                <img src="https://via.placeholder.com/400x400/f8fafc/64748b?text=Product+2" alt="Product 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                <button class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur text-gray-900 py-2 rounded-lg font-medium opacity-0 group-hover:opacity-100 transition translate-y-2 group-hover:translate-y-0">Quick Add</button>
+            </div>
+            <h3 class="font-medium text-gray-900">Canvas Backpack</h3>
+            <span class="font-semibold">$59.00</span>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="group">
+            <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-square mb-4">
+                <img src="https://via.placeholder.com/400x400/f8fafc/64748b?text=Product+3" alt="Product 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                <button class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur text-gray-900 py-2 rounded-lg font-medium opacity-0 group-hover:opacity-100 transition translate-y-2 group-hover:translate-y-0">Quick Add</button>
+                <span class="absolute top-3 left-3 bg-green-500 text-white text-xs px-2 py-1 rounded">New</span>
+            </div>
+            <h3 class="font-medium text-gray-900">Minimalist Watch</h3>
+            <span class="font-semibold">$129.00</span>
+        </div>
+        <!-- Product Card 4 -->
+        <div class="group">
+            <div class="relative overflow-hidden rounded-xl bg-gray-100 aspect-square mb-4">
+                <img src="https://via.placeholder.com/400x400/f8fafc/64748b?text=Product+4" alt="Product 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                <button class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur text-gray-900 py-2 rounded-lg font-medium opacity-0 group-hover:opacity-100 transition translate-y-2 group-hover:translate-y-0">Quick Add</button>
+            </div>
+            <h3 class="font-medium text-gray-900">Leather Wallet</h3>
+            <span class="font-semibold">$45.00</span>
+        </div>
+    </div>
+</section>
+
+<!-- Collections -->
+<section id="collections" class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Shop by Collection</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5]">
+                <img src="https://via.placeholder.com/500x625/e2e8f0/475569?text=Accessories" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Accessories" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6">
+                    <h3 class="text-white text-2xl font-bold">Accessories</h3>
+                    <span class="text-white/80 text-sm">24 products</span>
+                </div>
+            </a>
+            <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5]">
+                <img src="https://via.placeholder.com/500x625/e2e8f0/475569?text=Apparel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Apparel" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6">
+                    <h3 class="text-white text-2xl font-bold">Apparel</h3>
+                    <span class="text-white/80 text-sm">36 products</span>
+                </div>
+            </a>
+            <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5]">
+                <img src="https://via.placeholder.com/500x625/e2e8f0/475569?text=Home" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Home" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6">
+                    <h3 class="text-white text-2xl font-bold">Home & Living</h3>
+                    <span class="text-white/80 text-sm">18 products</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Badges / Features -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+            <div class="text-3xl mb-3">🚚</div>
+            <h3 class="font-semibold mb-1">Free Shipping</h3>
+            <p class="text-gray-500 text-sm">On orders over $50</p>
+        </div>
+        <div>
+            <div class="text-3xl mb-3">🔄</div>
+            <h3 class="font-semibold mb-1">Easy Returns</h3>
+            <p class="text-gray-500 text-sm">30-day return policy</p>
+        </div>
+        <div>
+            <div class="text-3xl mb-3">🔒</div>
+            <h3 class="font-semibold mb-1">Secure Checkout</h3>
+            <p class="text-gray-500 text-sm">SSL encrypted</p>
+        </div>
+        <div>
+            <div class="text-3xl mb-3">💬</div>
+            <h3 class="font-semibold mb-1">24/7 Support</h3>
+            <p class="text-gray-500 text-sm">Always here to help</p>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="bg-gray-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                Founded with a simple mission: create quality essentials that stand the test of time.
+                Every product is thoughtfully designed, ethically sourced, and built to last.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-8">
+                We believe in fewer, better things. Our commitment to sustainability means less waste,
+                fair labor practices, and materials that respect our planet.
+            </p>
+            <a href="#" class="inline-flex items-center text-brand-500 font-medium hover:text-brand-400 transition">
+                Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <img src="https://via.placeholder.com/600x400/1e293b/94a3b8?text=Our+Story" alt="About us" class="rounded-2xl" loading="lazy">
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="max-w-7xl mx-auto px-4 py-20 text-center">
+    <h2 class="text-3xl font-bold mb-4">Stay in the Loop</h2>
+    <p class="text-gray-600 mb-8 max-w-md mx-auto">Subscribe for exclusive offers, new arrivals, and 10% off your first order.</p>
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" required class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
+        <button type="submit" class="bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition whitespace-nowrap">Subscribe</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer class="border-t">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+            <h3 class="font-bold text-lg mb-4">BRAND</h3>
+            <p class="text-gray-500 text-sm">Quality essentials for modern living.</p>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4">Shop</h3>
+            <ul class="space-y-2 text-gray-500 text-sm">
+                <li><a href="#" class="hover:text-gray-900 transition">All Products</a></li>
+                <li><a href="#" class="hover:text-gray-900 transition">New Arrivals</a></li>
+                <li><a href="#" class="hover:text-gray-900 transition">Best Sellers</a></li>
+                <li><a href="#" class="hover:text-gray-900 transition">Sale</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4">Help</h3>
+            <ul class="space-y-2 text-gray-500 text-sm">
+                <li><a href="#" class="hover:text-gray-900 transition">FAQ</a></li>
+                <li><a href="#" class="hover:text-gray-900 transition">Shipping</a></li>
+                <li><a href="#" class="hover:text-gray-900 transition">Returns</a></li>
+                <li><a href="#" class="hover:text-gray-900 transition">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-4">Follow Us</h3>
+            <div class="flex gap-3">
+                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition" aria-label="Instagram">📷</a>
+                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition" aria-label="Twitter">🐦</a>
+                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition" aria-label="TikTok">🎵</a>
+            </div>
+        </div>
+    </div>
+    <div class="border-t py-6 text-center text-gray-400 text-sm">
+        © 2026 BRAND. All rights reserved.
+    </div>
+</footer>
+
+<script>
+// Cart functionality
+const cart = { items: [], count: 0 };
+function updateCartCount() {
+    const el = document.getElementById('cart-count');
+    if (cart.count > 0) { el.textContent = cart.count; el.classList.remove('hidden'); }
+    else { el.classList.add('hidden'); }
+}
+document.querySelectorAll('[class*="Quick Add"]').forEach(btn => {
+    btn.addEventListener('click', () => { cart.count++; updateCartCount(); });
+});
+
+// Mobile menu toggle
+document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    const nav = document.querySelector('nav .hidden.md\\:flex');
+    nav?.classList.toggle('hidden');
+    nav?.classList.toggle('flex');
+    nav?.classList.toggle('flex-col');
+    nav?.classList.toggle('absolute');
+    nav?.classList.toggle('top-full');
+    nav?.classList.toggle('left-0');
+    nav?.classList.toggle('right-0');
+    nav?.classList.toggle('bg-white');
+    nav?.classList.toggle('p-4');
+    nav?.classList.toggle('border-b');
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+
+</body>
+</html>
