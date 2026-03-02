@@ -43,3 +43,26 @@ clean:  ## Remove generated files
 	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 	find . -type d -name .pytest_cache -exec rm -rf {} + 2>/dev/null || true
 	rm -rf htmlcov/ .coverage
+
+# Performance & Comparison Tools
+.PHONY: analyze compare analyze-all
+
+analyze:
+	@echo "📊 Analyzing minimal-store..."
+	@python tools/performance.py minimal-store
+
+analyze-all:
+	@echo "📊 Analyzing all templates..."
+	@for template in minimal-store dropship-starter landing-product; do \
+		echo "\n=== $$template ==="; \
+		python tools/performance.py $$template; \
+	done
+
+compare:
+	@echo "🔍 Comparing all templates..."
+	@python tools/compare.py minimal-store dropship-starter landing-product
+
+compare-save:
+	@echo "🔍 Comparing templates and saving to comparison.md..."
+	@python tools/compare.py minimal-store dropship-starter landing-product --output comparison.md
+	@echo "✅ Saved to comparison.md"

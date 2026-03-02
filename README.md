@@ -166,3 +166,68 @@ MIT
 - [AI-Listing-Writer](https://github.com/platoba/AI-Listing-Writer) — AI product listing generator
 - [MultiAffiliateTGBot](https://github.com/platoba/MultiAffiliateTGBot) — Multi-platform affiliate bot
 - [SEO-Audit-CLI](https://github.com/platoba/SEO-Audit-CLI) — SEO audit command-line tool
+
+## 🔧 New Tools (v4.0)
+
+### Performance Analyzer
+
+Analyze template performance metrics and get optimization recommendations:
+
+```bash
+# Analyze a template
+python tools/performance.py minimal-store
+
+# Output as JSON
+python tools/performance.py minimal-store --json
+
+# Run Lighthouse analysis (requires lighthouse CLI)
+python tools/performance.py minimal-store --lighthouse http://localhost:8081
+```
+
+**Features:**
+- File size analysis (HTML, CSS, JS, images)
+- HTML metrics (lines, tags, lazy loading, async scripts)
+- Performance recommendations
+- Optional Lighthouse integration
+
+### Template Comparator
+
+Compare multiple templates side-by-side:
+
+```bash
+# Compare all templates
+python tools/compare.py minimal-store dropship-starter landing-product
+
+# Output as JSON
+python tools/compare.py minimal-store dropship-starter --json
+
+# Save to file
+python tools/compare.py minimal-store dropship-starter --output comparison.md
+```
+
+**Comparison Metrics:**
+- Basic metrics (file size, lines, elements)
+- SEO (title, description, OG tags, canonical)
+- Performance (lazy loading, async scripts)
+- Accessibility (ARIA labels, alt texts, landmarks)
+- E-commerce features (product cards, CTAs, testimonials)
+
+**Example Output:**
+
+```markdown
+# Template Comparison
+
+## 📊 Basic Metrics
+| Metric | minimal-store | dropship-starter |
+|--------|---------------|------------------|
+| File Size (KB) | 12.5 | 18.3 |
+| Images | 5 | 12 |
+| CTA Buttons | 3 | 8 |
+
+## 🔍 SEO Metrics
+| Metric | minimal-store | dropship-starter |
+|--------|---------------|------------------|
+| Has Title | ✅ | ✅ |
+| OG Tags | 4 | 6 |
+```
+
