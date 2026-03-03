@@ -3,12 +3,10 @@
 
 import argparse
 import json
-import os
 import re
 import shutil
 import sys
 from pathlib import Path
-from typing import Optional
 
 TEMPLATES_DIR = Path(__file__).parent.parent
 TEMPLATES = {
